@@ -90,7 +90,7 @@ El proyecto contempla la creación de una plataforma web y una aplicación para 
 
 
 ### ORGANIGRAMA DEL EQUIPO
-  <img src="img/Organigrama Sentinel Pi (1).png" width="80%" style="padding: 10px;" />
+  <img src="img/Organigrama Sentinel Pi (2).png" width="80%" style="padding: 10px;" />
 
 
 
