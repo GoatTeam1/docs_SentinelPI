@@ -11,8 +11,8 @@
    <td>Logo de la Aplicacion</td>
    <td>Logo de empresa</td>
   <tr>
-    <td>  <img src="img\img2.jpg" width="80%" style="padding: 10px;" />  </td>
-    <td>   <img src="img\img1.jpg" width="80%" style="padding: 10px;" /> </td>
+    <td>  <img src="img/img2.jpeg" width="80%" style="padding: 10px;" />  </td>
+    <td>   <img src="img/img1.jpeg" width="80%" style="padding: 10px;" /> </td>
    
   </tr>
  
@@ -71,12 +71,6 @@ El proyecto contempla la creación de una plataforma web y una aplicación para 
 
 
 
-### DIAGRAMA DE GANNT
-
-<img src="FronEnd\Assets\Imagenes\Diagrama de Gantt.png" width="80%" style="padding: 10px;" /></td>
-
----
-
 
 
 ### TABLA DE COLABORADORES
@@ -105,14 +99,6 @@ El proyecto contempla la creación de una plataforma web y una aplicación para 
 ---
 
 
-### LISTA DE TECNOLOGIAS
-
-<p align = "justify">
-
-*Documentación:*
-![Narkdown](https://img.shields.io/badge/Made%20with-Narkdown-1f425f.svg)
-
-</p>
 
 
 
