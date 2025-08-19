@@ -1,0 +1,47 @@
+{
+  "attacks": [
+    {
+      "id": "64b9f07f2d4f3f001e5e0001",
+      "ip": "192.168.0.12",
+      "port": 22,
+      "protocol": "SSH",
+      "os": "Linux",
+      "timestamp": "2025-08-17T18:45:32Z",
+      "payload": "brute-force-attempt",
+      "tools": ["Hydra", "Nmap"],
+      "behavior": "Multiple failed login attempts",
+      "geolocation": {
+        "country": "Mexico",
+        "city": "CDMX"
+      }
+    }
+  ],
+  "ip_info": [
+    {
+      "id": "64b9f07f2d4f3f001e5e0002",
+      "ip": "192.168.0.12",
+      "lastActivity": "2025-08-17T19:00:12Z",
+      "geolocation": {
+        "country": "Mexico",
+        "city": "CDMX"
+      }
+    }
+  ],
+  "login_attemps": [
+    {
+      "id": "64b9f07f2d4f3f001e5e0003",
+      "attackId": "64b9f07f2d4f3f001e5e0001",
+      "username": "root",
+      "password": "123456",
+      "timestamp": "2025-08-17T18:46:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "64b9f07f2d4f3f001e5e0004",
+      "username": "admin",
+      "email": "admin@mail.com",
+      "password": "hashed_password_123"
+    }
+  ]
+}
