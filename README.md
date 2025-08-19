@@ -220,3 +220,14 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 - **SMTP** *(opcional)*: envío de correo (App Password recomendado con Gmail).
 - **Webhook** *(opcional)*: HTTP/HTTPS POST hacia un ingestor.
 - **Syslog** *(opcional)*: envío a colector UDP/TCP 514.
+
+---
+
+### Utilidades de verificación
+![nmap](https://img.shields.io/badge/nmap-2C3E50?style=for-the-badge)
+![curl](https://img.shields.io/badge/curl-073551?style=for-the-badge)
+![telnet](https://img.shields.io/badge/telnet-555?style=for-the-badge)
+![mysql client](https://img.shields.io/badge/mysql%20client-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+
+- **nmap** para escaneo de puertos/servicios.
+- **curl/telnet/mysql** para generar eventos de prueba.
