@@ -197,3 +197,13 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 - *Entrypoint* en **Python** para generar `opencanary.conf` desde plantilla/variables de entorno.
 - Script de endurecimiento de egreso en **Bash** (`hardening/outbound-lockdown.sh`).
+
+---
+
+### Red & Seguridad (host)
+![iptables](https://img.shields.io/badge/iptables-nftables-6E9F18?style=for-the-badge&logo=linux&logoColor=white)
+![Syslog](https://img.shields.io/badge/Syslog-UDP%2FTCP%20514-4B7F52?style=for-the-badge)
+![VLAN/DMZ](https://img.shields.io/badge/Red-VLAN%2FDMZ-0F766E?style=for-the-badge)
+
+- Aislamiento en VLAN/DMZ, límites de egreso mediante **iptables/nftables**.
+- Verificación de colisiones de puertos con `ss`, `netstat` o `lsof`.
