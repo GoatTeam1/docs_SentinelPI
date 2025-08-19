@@ -1,0 +1,39 @@
+{
+  "attacks": {
+    "id": "ObjectId",
+    "ip": "String",
+    "port": "Integer",
+    "protocol": "String",
+    "os": "String",
+    "timestamp": "Date",
+    "payload": "String",
+    "tools": ["String"],
+    "behavior": "String",
+    "geolocation": {
+      "country": "String",
+      "city": "String"
+    }
+  },
+  "ip_info": {
+    "id": "ObjectId",
+    "ip": "String",
+    "lastActivity": "Date",
+    "geolocation": {
+      "country": "String",
+      "city": "String"
+    }
+  },
+  "login_attemps": {
+    "id": "ObjectId",
+    "attackId": "ObjectId",
+    "username": "String",
+    "password": "String",
+    "timestamp": "Date"
+  },
+  "users": {
+    "id": "ObjectId",
+    "username": "String",
+    "email": "String",
+    "password": "String"
+  }
+}
