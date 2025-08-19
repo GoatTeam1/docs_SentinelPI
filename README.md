@@ -182,12 +182,12 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 ### Honeypots y Emulación
 ![OpenCanary](https://img.shields.io/badge/OpenCanary-Emulaci%C3%B3n%20de%20servicios-222?style=for-the-badge)
-![Cowrie (opcional)](https://img.shields.io/badge/Cowrie-SSH%2FTelnet%20alta%20interacci%C3%B3n-555?style=for-the-badge)
-![T--Pot (opcional)](https://img.shields.io/badge/T--Pot-Suite%20de%20honeypots-777?style=for-the-badge)
+![Cowrie](https://img.shields.io/badge/Cowrie-SSH%2FTelnet%20alta%20interacci%C3%B3n-555?style=for-the-badge)
+![T--Pot](https://img.shields.io/badge/T--Pot-Suite%20de%20honeypots-777?style=for-the-badge)
 
 - **OpenCanary** (principal): HTTP, Telnet, MySQL, FTP, SMB, RDP, TFTP, NTP, SSH (opcional).
-- **Cowrie** *(opcional)*: captura de sesiones SSH/Telnet de alta interacción.
-- **T‑Pot** *(opcional / hardware exigente)*: suite integrada de honeypots.
+- **Cowrie**: captura de sesiones SSH/Telnet de alta interacción.
+- **T‑Pot**: suite integrada de honeypots.
 
 ---
 
@@ -217,9 +217,9 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 ![Syslog](https://img.shields.io/badge/Alertas-Syslog-4B7F52?style=for-the-badge)
 
 - **Archivo**: `./data/opencanary.log` (JSON por línea).
-- **SMTP** *(opcional)*: envío de correo (App Password recomendado con Gmail).
-- **Webhook** *(opcional)*: HTTP/HTTPS POST hacia un ingestor.
-- **Syslog** *(opcional)*: envío a colector UDP/TCP 514.
+- **SMTP**: envío de correo (App Password recomendado con Gmail).
+- **Webhook**: HTTP/HTTPS POST hacia un ingestor.
+- **Syslog**: envío a colector UDP/TCP 514.
 
 ---
 
