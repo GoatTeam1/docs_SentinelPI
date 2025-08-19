@@ -36,8 +36,13 @@ Sentinel Pi es un sistema honeypot inteligente implementado sobre Raspberry Pi, 
 ### PLANTEAMIENTO DEL PROBLEMA
 
 <p align="justify">
-El incremento de los ataques informáticos ha generado un clima de inseguridad tecnológica en múltiples sectores. Las instituciones educativas, empresas y organizaciones públicas enfrentan amenazas constantes que comprometen no sólo sus datos, sino también su reputación. Un incidente de seguridad que derive en la pérdida de confianza puede provocar desde sanciones legales hasta la quiebra de una organización.
-Este proyecto busca empoderar a las instituciones con una herramienta económica y efectiva de detección temprana de amenazas, brindando visibilidad sobre los intentos de ataque que reciben, lo cual permitirá implementar medidas preventivas antes de que se concrete una intrusión. Al usar un honeypot personalizado según el contexto de la organización, se mejora la pertinencia de los datos obtenidos y se fomenta una cultura proactiva en seguridad informática.
+Sentinel Pi es un sistema honeypotimplementado sobre Raspberry Pi, diseñado para detectar y registrar intentos de intrusión, analizar amenazas con Python, y visualizarlas mediante un panel web en React y una app para Smart TV con Kotlin. Este proyecto combina bajo costo, portabilidad y escalabilidad para ofrecer una solución accesible en entornos de ciberseguridad.
+
+La arquitectura del sistema se centra en la Raspberry Pi como dispositivo principal, simulando servicios vulnerables para atraer atacantes y recopilar datos de sus actividades. Estos registros son enviados a una API desarrollada en Spring Boot, que centraliza la información, la almacena en bases de datos seguras y permite el análisis posterior. El uso de contenedores Docker y un diseño modular asegura que el sistema pueda adaptarse fácilmente a distintas instituciones sin comprometer su funcionamiento.
+
+El panel web en React proporciona visualización en tiempo real de intentos de acceso, estadísticas históricas y patrones de ataque, utilizando librerías de gráficos como Recharts. Por su parte, la aplicación en Smart TV, desarrollada en Kotlin, está orientada a salas de monitoreo, facilitando la supervisión colaborativa.
+
+En conjunto, Sentinel Pi democratiza la ciberseguridad, brindando a universidades, empresas y gobiernos una herramienta práctica, flexible y confiable para fortalecer su defensa digital.
 
 </p>
 
@@ -45,9 +50,15 @@ Este proyecto busca empoderar a las instituciones con una herramienta económica
 
 ### PROPUESTA DE SOLUCION
 <p align="justify">
-En respuesta al creciente número de ciberataques que amenazan diariamente la integridad de empresas, instituciones y servicios, se plantea el desarrollo de una solución práctica, accesible y orientada a la detección temprana de posibles intrusiones mediante el uso de dispositivos Raspberry Pi configurados como honeypots personalizados. Esta propuesta busca ofrecer una herramienta tangible para monitorear y analizar el comportamiento de posibles atacantes antes de que logren comprometer activos críticos.
+En respuesta al creciente número de ciberataques que amenazan diariamente la integridad de empresas, instituciones y servicios públicos, se plantea el desarrollo de Sentinel Pi, una solución práctica, accesible y orientada a la detección temprana de posibles intrusiones mediante el uso de dispositivos Raspberry Pi configurados como honeypots personalizados. Este enfoque busca ofrecer una herramienta tangible para monitorear y analizar el comportamiento de posibles atacantes antes de que logren comprometer activos críticos, reforzando así la seguridad en infraestructuras tecnológicas con bajo costo de implementación.
 
-El proyecto contempla la creación de una plataforma web y una aplicación para dispositivos inteligentes que permitan la visualización en tiempo real de los ataques recibidos por el honeypot. Este será adaptado según las necesidades particulares de cada organización, simulando servicios y entornos reales para atraer posibles atacantes sin poner en riesgo la infraestructura operativa. La información recolectada será fundamental para identificar patrones de ataque, vulnerabilidades y métodos utilizados por los intrusos.
+El proyecto contempla la creación de una plataforma web en React y una aplicación para dispositivos inteligentes, incluyendo Smart TV con Kotlin, que permitirán la visualización en tiempo real de los intentos de intrusión captados por el honeypot. Estos entornos ofrecerán reportes interactivos y estadísticas generadas con Python y librerías de análisis de datos, facilitando la comprensión de patrones de ataque, su frecuencia y los vectores más comunes utilizados por los atacantes.
+
+La configuración del honeypot será adaptable a las necesidades particulares de cada organización, con el objetivo de atraer atacantes en un entorno controlado y seguro que no ponga en riesgo la infraestructura operativa. Toda la información recolectada será enviada a una API centralizada en Spring Boot, que se encargará de procesar, almacenar y clasificar los registros en una base de datos MongoDB para garantizar escalabilidad y eficiencia.
+
+Sentinel Pi considera aspectos de seguridad avanzados, como la comunicación cifrada mediante HTTPS y autenticación con JWT, además de una arquitectura modular desplegada con Docker Compose para facilitar la portabilidad y el escalamiento en distintos entornos institucionales.
+
+En conjunto, esta propuesta representa una solución integral que combina detección temprana, análisis forense y visualización intuitiva, otorgando a las instituciones una gran herramienta para reforzar sus defensas cibernéticas y anticiparse a posibles amenazas.
 
 </p>
 
@@ -63,23 +74,23 @@ El proyecto contempla la creación de una plataforma web y una aplicación para 
 
 ### OBJETIVOS ESPECIFICOS
 
-<p align="justify"><strong>Configurar el Raspberry Pi como un honeypot capaz de detectar y registrar intentos de intrusión.</p>
+<p align="justify">Configurar el Raspberry Pi como un honeypot capaz de detectar y registrar intentos de intrusión.</p>
 
-<p align="justify"><strong>Mapa interactivo</strong>Desarrollar una plataforma web que permita visualizar en tiempo real los intentos de acceso captados por el sistema.</p>
+<p align="justify">Mapa interactivo: Desarrollar una plataforma web que permita visualizar en tiempo real los intentos de acceso captados por el sistema.</p>
 
-<p align="justify"><strong>Implementación de alertas</strong>Implementar un sistema centralizado que recopile, almacene y analice los datos generados por el dispositivo.</p>
+<p align="justify">Implementación de alertas: Implementar un sistema centralizado que recopile, almacene y analice los datos generados por el dispositivo.</p>
 
-<p align="justify"><strong>Implementación de reportes eficiente</strong>Facilitar a las instituciones el monitoreo y la comprensión de los ataques mediante gráficos, reportes y estadísticas.</p>
+<p align="justify">Implementación de reportes eficiente: Facilitar a las instituciones el monitoreo y la comprensión de los ataques mediante gráficos, reportes y estadísticas.</p>
 
-<p align="justify"><strong>Desarrollar una aplicación para dispositivos inteligentes que permita la consulta de los datos de seguridad capturados por el honeypot desde diferentes entornos.</p>
+<p align="justify">Desarrollar una aplicación para dispositivos inteligentes que permita la consulta de los datos de seguridad capturados por el honeypot desde diferentes entornos.</p>
 
-<p align="justify"><strong>Validar el sistema mediante pruebas en un entorno controlado simulando escenarios reales de ataque.</p>
+<p align="justify">Validar el sistema mediante pruebas en un entorno controlado simulando escenarios reales de ataque.</p>
 
-<p align="justify"><strong>Asegurar que el sistema pueda escalar o adaptarse a distintas instituciones con necesidades específicas.</p>
-
-
+<p align="justify">Asegurar que el sistema pueda escalar o adaptarse a distintas instituciones con necesidades específicas.</p>
 
 
+
+---
 
 ### TABLA DE COLABORADORES
 
@@ -102,12 +113,38 @@ El proyecto contempla la creación de una plataforma web y una aplicación para 
 
 
 
+---
 
+### DIAGRAMA DE GANTT
+
+  <img src="img/img/gantt_sentinel.drawio.png" width="80%" style="padding: 10px;" />
 
 ---
 
+### LISTA DE TECNOLOGIAS
+
+## 🚀 Tecnologías utilizadas en Sentinel Pi
+
+### Backend
+![Spring Boot](https://img.shields.io/badge/SpringBoot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+### Smart TV App
+![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
+
+### Base de Datos
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+
+### DevOps & Monitoreo
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 
+### Modelado & Diagramas
+![draw.io](https://img.shields.io/badge/draw.io-F08705?style=for-the-badge&logo=diagrams.net&logoColor=white)
 
-
-
+### Control de versiones
+![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
