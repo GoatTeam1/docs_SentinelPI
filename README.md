@@ -110,8 +110,8 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 |-------------------------------|---------------------|--------|
 | Leslie Janet Aparicio Castro   | [leslie-aparicio](https://github.com/leslie-aparicio)        | Documentadora       |
 | Carlos Armando Aranda Hernández            | [Carlicsus](https://github.com/Carlicsus)       |   Desarrollador Backend     |
-| José Alejandro Briones Arroyo    | [MotaBytes](https://github.com/MotaBytes)             |  Desarrollador del Honeypot y DecSecOps      |
-| Diego Hernández Mota           | [alexba2004](https://github.com/alexba2004)       |   Desarrollador Frontend     |
+| José Alejandro Briones Arroyo    | [alexba2004](https://github.com/alexba2004)       |  Desarrollador del Honeypot y DecSecOps      |
+| Diego Hernández Mota           | [MotaBytes](https://github.com/MotaBytes)             |   Desarrollador Frontend     |
 | Jazziel Rodríguez López    | [JazzoLopez](https://github.com/JazzoLopez)             |  Desarrollador Backend     |
 
 ---
