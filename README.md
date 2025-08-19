@@ -188,3 +188,12 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 - **OpenCanary** (principal): HTTP, Telnet, MySQL, FTP, SMB, RDP, TFTP, NTP, SSH (opcional).
 - **Cowrie** *(opcional)*: captura de sesiones SSH/Telnet de alta interacción.
 - **T‑Pot** *(opcional / hardware exigente)*: suite integrada de honeypots.
+
+---
+
+### Lenguajes & Runtime
+![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-121011?style=for-the-badge&logo=gnubash&logoColor=white)
+
+- *Entrypoint* en **Python** para generar `opencanary.conf` desde plantilla/variables de entorno.
+- Script de endurecimiento de egreso en **Bash** (`hardening/outbound-lockdown.sh`).
