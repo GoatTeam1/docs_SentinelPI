@@ -207,3 +207,16 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 - Aislamiento en VLAN/DMZ, límites de egreso mediante **iptables/nftables**.
 - Verificación de colisiones de puertos con `ss`, `netstat` o `lsof`.
+
+---
+
+### Logging & Alertas
+![JSON Lines](https://img.shields.io/badge/Logs-JSONL-000?style=for-the-badge)
+![SMTP](https://img.shields.io/badge/Alertas-SMTP-6A5ACD?style=for-the-badge)
+![Webhook](https://img.shields.io/badge/Alertas-Webhook-2E7D32?style=for-the-badge)
+![Syslog](https://img.shields.io/badge/Alertas-Syslog-4B7F52?style=for-the-badge)
+
+- **Archivo**: `./data/opencanary.log` (JSON por línea).
+- **SMTP** *(opcional)*: envío de correo (App Password recomendado con Gmail).
+- **Webhook** *(opcional)*: HTTP/HTTPS POST hacia un ingestor.
+- **Syslog** *(opcional)*: envío a colector UDP/TCP 514.
