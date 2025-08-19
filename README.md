@@ -4,13 +4,13 @@
 ### Sentinel PI
 <p align="justify"> El aumento de los ciberataques a nivel mundial ha generado la necesidad urgente de contar con mecanismos de detección temprana que permitan mitigar riesgos y reforzar la seguridad en redes y sistemas críticos. En este contexto surge Sentinel Pi, un proyecto innovador diseñado como un honeypot inteligente basado en Raspberry Pi, cuyo propósito principal es actuar como una herramienta de bajo costo, accesible y adaptable para la detección temprana de amenazas informáticas. Este sistema busca no solo identificar y registrar intentos de intrusión, sino también ofrecer un entorno de análisis que permita comprender mejor los patrones de ataque y, a partir de ello, fortalecer la ciberdefensa de instituciones y organizaciones que requieran un monitoreo constante.
 
-La arquitectura de Sentinel Pi está pensada de manera modular y escalable. En su núcleo, la Raspberry Pi funciona como un honeypot capaz de simular servicios comunes como SSH, FTP o Telnet, con el objetivo de atraer a potenciales atacantes y recopilar información sobre los intentos de acceso no autorizados. Todos los registros generados son procesados mediante una API centralizada desarrollada en Spring Boot, que asegura un flujo estructurado de datos hacia una base de datos confiable. Este enfoque permite manejar información sensible de manera segura y ordenada, garantizando la integridad de los registros y la consistencia de los eventos capturados.
+<p align="justify"> La arquitectura de Sentinel Pi está pensada de manera modular y escalable. En su núcleo, la Raspberry Pi funciona como un honeypot capaz de simular servicios comunes como SSH, FTP o Telnet, con el objetivo de atraer a potenciales atacantes y recopilar información sobre los intentos de acceso no autorizados. Todos los registros generados son procesados mediante una API centralizada desarrollada en Spring Boot, que asegura un flujo estructurado de datos hacia una base de datos confiable. Este enfoque permite manejar información sensible de manera segura y ordenada, garantizando la integridad de los registros y la consistencia de los eventos capturados.
 
-Una de las características diferenciadoras de Sentinel Pi es su enfoque en la visualización distribuida de datos. Además de la interfaz web, el sistema incluye una aplicación desarrollada en Kotlin para Smart TV, lo que permite a los equipos de seguridad consultar de forma inmediata las métricas más relevantes en entornos de trabajo colaborativo o salas de monitoreo. De esta manera, los datos obtenidos del honeypot no permanecen ocultos en registros técnicos, sino que son expuestos como herramientas estratégicas para la toma de decisiones.
+<p align="justify"> Una de las características diferenciadoras de Sentinel Pi es su enfoque en la visualización distribuida de datos. Además de la interfaz web, el sistema incluye una aplicación desarrollada en Kotlin para Smart TV, lo que permite a los equipos de seguridad consultar de forma inmediata las métricas más relevantes en entornos de trabajo colaborativo o salas de monitoreo. De esta manera, los datos obtenidos del honeypot no permanecen ocultos en registros técnicos, sino que son expuestos como herramientas estratégicas para la toma de decisiones.
 
-El proyecto también contempla requisitos no funcionales clave como la escalabilidad mediante contenedores en Docker Compose, la comunicación segura usando HTTPS y JWT, la portabilidad hacia diferentes dispositivos y navegadores, y la tolerancia a fallos frente a desconexiones o interrupciones temporales. Estos atributos garantizan que Sentinel Pi no sea una solución rígida, sino un sistema adaptable a diversos contextos institucionales, desde universidades hasta pequeñas empresas o dependencias gubernamentales que buscan robustecer su postura de seguridad sin invertir en costosas infraestructuras.
+<p align="justify"> El proyecto también contempla requisitos no funcionales clave como la escalabilidad mediante contenedores en Docker Compose, la comunicación segura usando HTTPS y JWT, la portabilidad hacia diferentes dispositivos y navegadores, y la tolerancia a fallos frente a desconexiones o interrupciones temporales. Estos atributos garantizan que Sentinel Pi no sea una solución rígida, sino un sistema adaptable a diversos contextos institucionales, desde universidades hasta pequeñas empresas o dependencias gubernamentales que buscan robustecer su postura de seguridad sin invertir en costosas infraestructuras.
 
-Sentinel Pi se apoya en prácticas ágiles y herramientas de modelado como UML, DFD y Redes de Petri, que han permitido definir de manera clara los casos de uso, los componentes principales y la interacción entre módulos. Asimismo, la documentación asociada al proyecto sigue los lineamientos del estándar IEEE 830, asegurando que los requisitos, restricciones y escenarios futuros estén formalmente especificados y disponibles para la comunidad.
+<p align="justify"> Sentinel Pi se apoya en prácticas ágiles y herramientas de modelado como UML, DFD y Redes de Petri, que han permitido definir de manera clara los casos de uso, los componentes principales y la interacción entre módulos. Asimismo, la documentación asociada al proyecto sigue los lineamientos del estándar IEEE 830, asegurando que los requisitos, restricciones y escenarios futuros estén formalmente especificados y disponibles para la comunidad.
  </p>
 
 ## LOGOTIPOS
@@ -36,13 +36,13 @@ En la capa de detección, Raspberry Pi emula servicios comunes como SSH, FTP o H
 
 En la capa de procesamiento, los eventos capturados son enviados a una API central desarrollada en Java con Spring Boot, donde se procesan, validan y almacenan en una base de datos como MongoDB o MySQL.
 
-En la capa de análisis y visualización, se utilizan herramientas como Python para análisis de datos y un frontend en React con TailwindCSS que permite monitorear en tiempo real los ataques registrados, así como explorar estadísticas históricas mediante gráficos interactivos.
+<p align="justify"> En la capa de análisis y visualización, se utilizan herramientas como Python para análisis de datos y un frontend en React con TailwindCSS que permite monitorear en tiempo real los ataques registrados, así como explorar estadísticas históricas mediante gráficos interactivos.
 
-Adicionalmente, se desarrolló una aplicación para Smart TV en Kotlin, que facilita la consulta de datos de seguridad en pantallas inteligentes, pensando en centros de monitoreo y salas de control.
+<p align="justify"> Se desarrolló una aplicación para Smart TV en Kotlin, que facilita la consulta de datos de seguridad en pantallas inteligentes, pensando en centros de monitoreo y salas de control.
 
-El proyecto también integra un componente de monitoreo y visualización avanzada con Grafana, permitiendo que los administradores puedan correlacionar los intentos de intrusión con métricas de red y comportamiento en tiempo real. La arquitectura está soportada en contenedores Docker, lo que facilita la escalabilidad, la portabilidad y la implementación modular en distintos entornos.
+<p align="justify"> El proyecto también integra un componente de monitoreo y visualización avanzada con Grafana, permitiendo que los administradores puedan correlacionar los intentos de intrusión con métricas de red y comportamiento en tiempo real. La arquitectura está soportada en contenedores Docker, lo que facilita la escalabilidad, la portabilidad y la implementación modular en distintos entornos.
 
-Sentinel Pi no solo busca detectar ataques, sino también convertirse en una herramienta educativa y de investigación, brindando información sobre patrones de ataque, vectores de intrusión más utilizados y métodos de evasión empleados por ciberdelincuentes. Con esta propuesta, se fomenta una cultura de ciberseguridad más sólida, accesible y aplicada a escenarios reales, aportando valor tanto a pequeñas organizaciones como a instituciones de gran escala.
+<p align="justify"> Sentinel Pi no solo busca detectar ataques, sino también convertirse en una herramienta educativa y de investigación, brindando información sobre patrones de ataque, vectores de intrusión más utilizados y métodos de evasión empleados por ciberdelincuentes. Con esta propuesta, se fomenta una cultura de ciberseguridad más sólida, accesible y aplicada a escenarios reales, aportando valor tanto a pequeñas organizaciones como a instituciones de gran escala.
 </p>
 
 ---
@@ -52,11 +52,11 @@ Sentinel Pi no solo busca detectar ataques, sino también convertirse en una her
 <p align="justify">
 Sentinel Pi es un sistema honeypotimplementado sobre Raspberry Pi, diseñado para detectar y registrar intentos de intrusión, analizar amenazas con Python, y visualizarlas mediante un panel web en React y una app para Smart TV con Kotlin. Este proyecto combina bajo costo, portabilidad y escalabilidad para ofrecer una solución accesible en entornos de ciberseguridad.
 
-La arquitectura del sistema se centra en la Raspberry Pi como dispositivo principal, simulando servicios vulnerables para atraer atacantes y recopilar datos de sus actividades. Estos registros son enviados a una API desarrollada en Spring Boot, que centraliza la información, la almacena en bases de datos seguras y permite el análisis posterior. El uso de contenedores Docker y un diseño modular asegura que el sistema pueda adaptarse fácilmente a distintas instituciones sin comprometer su funcionamiento.
+<p align="justify"> La arquitectura del sistema se centra en la Raspberry Pi como dispositivo principal, simulando servicios vulnerables para atraer atacantes y recopilar datos de sus actividades. Estos registros son enviados a una API desarrollada en Spring Boot, que centraliza la información, la almacena en bases de datos seguras y permite el análisis posterior. El uso de contenedores Docker y un diseño modular asegura que el sistema pueda adaptarse fácilmente a distintas instituciones sin comprometer su funcionamiento.
 
-El panel web en React proporciona visualización en tiempo real de intentos de acceso, estadísticas históricas y patrones de ataque, utilizando librerías de gráficos como Recharts. Por su parte, la aplicación en Smart TV, desarrollada en Kotlin, está orientada a salas de monitoreo, facilitando la supervisión colaborativa.
+<p align="justify"> El panel web en React proporciona visualización en tiempo real de intentos de acceso, estadísticas históricas y patrones de ataque, utilizando librerías de gráficos como Recharts. Por su parte, la aplicación en Smart TV, desarrollada en Kotlin, está orientada a salas de monitoreo, facilitando la supervisión colaborativa.
 
-En conjunto, Sentinel Pi democratiza la ciberseguridad, brindando a universidades, empresas y gobiernos una herramienta práctica, flexible y confiable para fortalecer su defensa digital.
+<p align="justify"> En conjunto, Sentinel Pi democratiza la ciberseguridad, brindando a universidades, empresas y gobiernos una herramienta práctica, flexible y confiable para fortalecer su defensa digital.
 
 </p>
 
@@ -66,13 +66,13 @@ En conjunto, Sentinel Pi democratiza la ciberseguridad, brindando a universidade
 <p align="justify">
 En respuesta al creciente número de ciberataques que amenazan diariamente la integridad de empresas, instituciones y servicios públicos, se plantea el desarrollo de Sentinel Pi, una solución práctica, accesible y orientada a la detección temprana de posibles intrusiones mediante el uso de dispositivos Raspberry Pi configurados como honeypots personalizados. Este enfoque busca ofrecer una herramienta tangible para monitorear y analizar el comportamiento de posibles atacantes antes de que logren comprometer activos críticos, reforzando así la seguridad en infraestructuras tecnológicas con bajo costo de implementación.
 
-El proyecto contempla la creación de una plataforma web en React y una aplicación para dispositivos inteligentes, incluyendo Smart TV con Kotlin, que permitirán la visualización en tiempo real de los intentos de intrusión captados por el honeypot. Estos entornos ofrecerán reportes interactivos y estadísticas generadas con Python y librerías de análisis de datos, facilitando la comprensión de patrones de ataque, su frecuencia y los vectores más comunes utilizados por los atacantes.
+<p align="justify"> El proyecto contempla la creación de una plataforma web en React y una aplicación para dispositivos inteligentes, incluyendo Smart TV con Kotlin, que permitirán la visualización en tiempo real de los intentos de intrusión captados por el honeypot. Estos entornos ofrecerán reportes interactivos y estadísticas generadas con Python y librerías de análisis de datos, facilitando la comprensión de patrones de ataque, su frecuencia y los vectores más comunes utilizados por los atacantes.
 
-La configuración del honeypot será adaptable a las necesidades particulares de cada organización, con el objetivo de atraer atacantes en un entorno controlado y seguro que no ponga en riesgo la infraestructura operativa. Toda la información recolectada será enviada a una API centralizada en Spring Boot, que se encargará de procesar, almacenar y clasificar los registros en una base de datos MongoDB para garantizar escalabilidad y eficiencia.
+<p align="justify"> La configuración del honeypot será adaptable a las necesidades particulares de cada organización, con el objetivo de atraer atacantes en un entorno controlado y seguro que no ponga en riesgo la infraestructura operativa. Toda la información recolectada será enviada a una API centralizada en Spring Boot, que se encargará de procesar, almacenar y clasificar los registros en una base de datos MongoDB para garantizar escalabilidad y eficiencia.
 
-Sentinel Pi considera aspectos de seguridad avanzados, como la comunicación cifrada mediante HTTPS y autenticación con JWT, además de una arquitectura modular desplegada con Docker Compose para facilitar la portabilidad y el escalamiento en distintos entornos institucionales.
+<p align="justify"> Sentinel Pi considera aspectos de seguridad avanzados, como la comunicación cifrada mediante HTTPS y autenticación con JWT, además de una arquitectura modular desplegada con Docker Compose para facilitar la portabilidad y el escalamiento en distintos entornos institucionales.
 
-En conjunto, esta propuesta representa una solución integral que combina detección temprana, análisis forense y visualización intuitiva, otorgando a las instituciones una gran herramienta para reforzar sus defensas cibernéticas y anticiparse a posibles amenazas.
+<p align="justify"> En conjunto, esta propuesta representa una solución integral que combina detección temprana, análisis forense y visualización intuitiva, otorgando a las instituciones una gran herramienta para reforzar sus defensas cibernéticas y anticiparse a posibles amenazas.
 
 </p>
 
@@ -102,8 +102,6 @@ En conjunto, esta propuesta representa una solución integral que combina detecc
 
 <p align="justify">Asegurar que el sistema pueda escalar o adaptarse a distintas instituciones con necesidades específicas.</p>
 
-
-
 ---
 
 ### TABLA DE COLABORADORES
@@ -116,14 +114,10 @@ En conjunto, esta propuesta representa una solución integral que combina detecc
 | Diego Hernández Mota           | [alexba2004](https://github.com/alexba2004)       |   Desarrollador Frontend     |
 | Jazziel Rodríguez López    | [JazzoLopez](https://github.com/JazzoLopez)             |  Desarrollador Backend     |
 
-
-
 ---
-
 
 ### ORGANIGRAMA DEL EQUIPO
   <img src="img/Organigrama Sentinel Pi (2).png" width="80%" style="padding: 10px;" />
-
 
 
 ---
