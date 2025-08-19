@@ -167,3 +167,13 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 ![Ubuntu Server ARM](https://img.shields.io/badge/Ubuntu%20Server-ARM64-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 > Modelos recomendados: Pi 3B+, 4B, 5 (2 GB RAM mínimo). SO recomendado: Raspberry Pi OS 64‑bit o Ubuntu Server ARM64.
+
+---
+
+### Contenedores & Orquestación
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker%20Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![network_mode: host](https://img.shields.io/badge/Docker-network__mode%3A%20host-555?style=for-the-badge)
+
+- Despliegue reproducible multi‑arquitectura (arm64/armv7/amd64).
+- `network_mode: host` para exponer puertos “bien conocidos” sin NAT.
