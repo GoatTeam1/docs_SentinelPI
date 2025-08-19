@@ -164,7 +164,7 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 ![Raspberry Pi OS](https://img.shields.io/badge/Raspberry%20Pi%20OS-(Debian%2012%2B)-A81D33?style=for-the-badge&logo=debian&logoColor=white)
 ![Ubuntu Server ARM](https://img.shields.io/badge/Ubuntu%20Server-ARM64-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
-> Modelos recomendados: Pi 3B+, 4B, 5 (2 GB RAM mínimo). SO recomendado: Raspberry Pi OS 64‑bit o Ubuntu Server ARM64.
+> Modelos recomendados: Pi 2B o superior (2 GB RAM mínimo). SO recomendado: Raspberry Pi OS 64‑bit o Ubuntu Server ARM64.
 
 ---
 
