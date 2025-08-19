@@ -155,3 +155,15 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 ### Control de versiones
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+
+### LISTA DE TECNOLOGÍAS
+
+## 🚀 Tecnologías utilizadas en SentinelPi para el Honeypot
+
+### Hardware & SO (Raspberry Pi)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
+![ARM (ARMv7/ARM64)](https://img.shields.io/badge/ARM-ARMv7%2FARM64-0091BD?style=for-the-badge&logo=arm&logoColor=white)
+![Raspberry Pi OS](https://img.shields.io/badge/Raspberry%20Pi%20OS-(Debian%2012%2B)-A81D33?style=for-the-badge&logo=debian&logoColor=white)
+![Ubuntu Server ARM](https://img.shields.io/badge/Ubuntu%20Server-ARM64-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+
+> Modelos recomendados: Pi 3B+, 4B, 5 (2 GB RAM mínimo). SO recomendado: Raspberry Pi OS 64‑bit o Ubuntu Server ARM64.
