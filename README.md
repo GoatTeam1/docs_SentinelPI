@@ -28,7 +28,21 @@ Sentinel Pi se apoya en prácticas ágiles y herramientas de modelado como UML, 
 
 ### DESCRIPCION
 <p align="justify">
-Sentinel Pi es un sistema honeypot inteligente implementado sobre Raspberry Pi, diseñado para detectar y registrar intentos de intrusión, analizar amenazas con Python, y visualizarlas mediante un panel web en React y una app para Smart TV con Kotlin.
+Sentinel Pi es un sistema de ciberseguridad basado en Raspberry Pi que funciona como un honeypot inteligente, diseñado para la detección temprana de amenazas y el análisis de intentos de intrusión. Su objetivo es proporcionar una solución accesible, escalable y adaptable que permita a instituciones, empresas y organizaciones contar con una primera línea de defensa contra ciberataques.
+
+El proyecto combina diferentes tecnologías en un ecosistema integral:
+
+En la capa de detección, Raspberry Pi emula servicios comunes como SSH, FTP o HTTP, atrayendo posibles atacantes en un entorno controlado y seguro.
+
+En la capa de procesamiento, los eventos capturados son enviados a una API central desarrollada en Java con Spring Boot, donde se procesan, validan y almacenan en una base de datos como MongoDB o MySQL.
+
+En la capa de análisis y visualización, se utilizan herramientas como Python para análisis de datos y un frontend en React con TailwindCSS que permite monitorear en tiempo real los ataques registrados, así como explorar estadísticas históricas mediante gráficos interactivos.
+
+Adicionalmente, se desarrolló una aplicación para Smart TV en Kotlin, que facilita la consulta de datos de seguridad en pantallas inteligentes, pensando en centros de monitoreo y salas de control.
+
+El proyecto también integra un componente de monitoreo y visualización avanzada con Grafana, permitiendo que los administradores puedan correlacionar los intentos de intrusión con métricas de red y comportamiento en tiempo real. La arquitectura está soportada en contenedores Docker, lo que facilita la escalabilidad, la portabilidad y la implementación modular en distintos entornos.
+
+Sentinel Pi no solo busca detectar ataques, sino también convertirse en una herramienta educativa y de investigación, brindando información sobre patrones de ataque, vectores de intrusión más utilizados y métodos de evasión empleados por ciberdelincuentes. Con esta propuesta, se fomenta una cultura de ciberseguridad más sólida, accesible y aplicada a escenarios reales, aportando valor tanto a pequeñas organizaciones como a instituciones de gran escala.
 </p>
 
 ---
@@ -103,7 +117,6 @@ En conjunto, esta propuesta representa una solución integral que combina detecc
 | Jazziel Rodríguez López    | [JazzoLopez](https://github.com/JazzoLopez)             |  Desarrollador Backend     |
 
 
-  
 
 ---
 
@@ -117,7 +130,7 @@ En conjunto, esta propuesta representa una solución integral que combina detecc
 
 ### DIAGRAMA DE GANTT
 
-  <img src="img/img/gantt_sentinel.drawio.png" width="80%" style="padding: 10px;" />
+  <img src="img/gantt_sentinel.drawio.png" width="80%" style="padding: 10px;" />
 
 ---
 
