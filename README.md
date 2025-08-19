@@ -192,7 +192,7 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 ---
 
 ### Lenguajes & Runtime
-![Python 3.x](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python 3.13.7](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-121011?style=for-the-badge&logo=gnubash&logoColor=white)
 
 - *Entrypoint* en **Python** para generar `opencanary.conf` desde plantilla/variables de entorno.
