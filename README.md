@@ -156,9 +156,7 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 ### Control de versiones
 ![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-### LISTA DE TECNOLOGÍAS
-
-## 🚀 Tecnologías utilizadas en SentinelPi para el Honeypot
+### 🫐 Tecnologías utilizadas en el Honeypot
 
 ### Hardware & SO (Raspberry Pi)
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white)
