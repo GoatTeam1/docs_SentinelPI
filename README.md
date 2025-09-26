@@ -106,13 +106,13 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 ### TABLA DE COLABORADORES
 
-| Nombre                        | Usuario             | Puesto |
-|-------------------------------|---------------------|--------|
-| Leslie Janet Aparicio Castro   | [leslie-aparicio](https://github.com/leslie-aparicio)        | Documentadora       |
-| Carlos Armando Aranda Hernández            | [Carlicsus](https://github.com/Carlicsus)       |   Desarrollador Backend     |
-| José Alejandro Briones Arroyo    | [alexba2004](https://github.com/alexba2004)       |  Desarrollador del Honeypot y DecSecOps      |
-| Diego Hernández Mota           | [MotaBytes](https://github.com/MotaBytes)             |   Desarrollador Frontend     |
-| Jazziel Rodríguez López    | [JazzoLopez](https://github.com/JazzoLopez)             |  Desarrollador Backend     |
+| Nombre                          | Usuario                                               | Puesto                                 |
+| ------------------------------- | ----------------------------------------------------- | -------------------------------------- |
+| Leslie Janet Aparicio Castro    | [leslie-aparicio](https://github.com/leslie-aparicio) | Documentadora                          |
+| Carlos Armando Aranda Hernández | [Carlicsus](https://github.com/Carlicsus)             | Desarrollador Backend                  |
+| José Alejandro Briones Arroyo   | [alexba2004](https://github.com/alexba2004)           | Desarrollador del Honeypot y DecSecOps |
+| Diego Hernández Mota            | [MotaBytes](https://github.com/MotaBytes)             | Desarrollador Frontend                 |
+| Jazziel Rodríguez López         | [JazzoLopez](https://github.com/JazzoLopez)           | Desarrollador Backend                  |
 
 ---
 
@@ -229,3 +229,395 @@ En respuesta al creciente número de ciberataques que amenazan diariamente la in
 
 - **nmap** para escaneo de puertos/servicios.
 - **curl/telnet/mysql** para generar eventos de prueba.
+
+---
+
+## Sentinel PI - Documentación Técnica
+
+Sistema de gestión y monitoreo desarrollado con arquitectura basada en microservicios, autenticación JWT y despliegue en contenedores.
+
+### 1. Herramientas y Versiones
+
+El proyecto está construido utilizando las siguientes tecnologías:
+
+- **Java**: 17
+- **Spring Boot**: 3.5.0
+- **Maven**: 3.9.x
+- **Angular**: 17
+- **Node.js**: 20.x (para frontend Angular)
+- **Yarn**: 1.22.x
+- **MongoDB**: 6.0
+- **Docker**: 24.x
+- **Dockerfile**: definido en el proyecto para construcción de imágenes
+- **Docker Compose**: 2.x (para orquestación de servicios)
+- **JWT (JSON Web Token)**: JJWT 0.11.5
+- **Spring Security**: última versión compatible con Spring Boot 3.5.0
+- **Lombok**: 1.18.x
+- **Postman**: 10.x (colecciones de pruebas de API)
+- **Git**: 2.40+
+
+### 2. Variables de Configuración
+
+El proyecto utiliza variables de entorno para separar credenciales y configuraciones sensibles.
+Estas variables deben definirse en un archivo `.env` (no versionado en Git) o como configuración en el servidor.
+
+#### Backend (Spring Boot)
+
+```properties
+SERVER_PORT=8080
+MONGO_URI=mongodb://<usuario>:<password>@<host>:<puerto>/<database>
+MONGO_DATABASE=sentinel_db
+JWT_SECRET=<clave-secreta-no-compartir>
+JWT_EXPIRATION=3600000
+LOG_LEVEL=INFO
+```
+
+#### Frontend (Angular)
+
+```typescript
+// environment.ts
+export const environment = {
+  production: false,
+  apiUrl: "http://localhost:8080/api"
+};
+```
+
+#### Docker
+
+```properties
+DOCKER_IMAGE_NAME=sentinel-pi
+DOCKER_IMAGE_TAG=latest
+MONGO_INITDB_ROOT_USERNAME=admin
+MONGO_INITDB_ROOT_PASSWORD=<password>
+MONGO_INITDB_DATABASE=sentinel_db
+```
+
+### 3. Ejemplos de Buenas Prácticas con Variables
+
+**No subir credenciales reales a GitHub.**
+
+Ejemplo correcto:
+```
+MONGO_URI=mongodb://<usuario>:<password>@localhost:27017/sentinel_db
+```
+
+Ejemplo incorrecto:
+```
+MONGO_URI=mongodb://admin:12345@localhost:27017/sentinel_db
+```
+
+**Mantener múltiples archivos de configuración:**
+- `application-dev.properties` para entorno local.
+- `application-prod.properties` para entorno de producción.
+
+**Uso de `.gitignore`**: asegurarse de que `.env` y configuraciones locales no se versionen.
+
+### 4. Estructura del Proyecto
+
+```
+sentinel-pi/
+├── backend/
+│   ├── src/main/java/... (código fuente Spring Boot)
+│   ├── pom.xml
+│   └── Dockerfile
+│
+├── frontend/
+│   ├── src/app/... (código fuente Angular)
+│   ├── package.json
+│   └── Dockerfile
+│
+├── docker-compose.yml
+├── .env (variables de entorno, no versionar)
+└── README.md
+```
+
+### 5. Ejecución Local
+
+#### Backend
+
+```bash
+cd backend
+mvn clean install
+mvn spring-boot:run
+```
+
+#### Frontend
+
+```bash
+cd frontend
+yarn install
+yarn start
+```
+
+#### Con Docker
+
+```bash
+docker-compose up --build
+```
+
+### 6. Pruebas con Postman
+
+Se incluye una colección de Postman con las principales rutas de la API.
+
+1. Importar el archivo `SentinelPI.postman_collection.json`.
+
+2. Configurar la variable de entorno `{{baseUrl}}` en Postman:
+   - Local: `http://localhost:8080/api`
+   - Producción: `https://<dominio>/api`
+
+### 7. Despliegue
+
+**Construir las imágenes Docker:**
+```bash
+docker build -t sentinel-pi-backend ./backend
+docker build -t sentinel-pi-frontend ./frontend
+```
+
+**Levantar con Docker Compose:**
+```bash
+docker-compose up -d
+```
+
+**Validar servicios en ejecución:**
+- Backend: `http://localhost:8080/api`
+- Frontend: `http://localhost:4200`
+
+---
+
+## Plan de Prueba – Proyecto Sentinel PI
+
+### Objetivo:
+Validar que Sentinel PI funcione correctamente en todos sus módulos: backend, frontend y APIs, asegurando integridad de datos, flujo de usuario correcto y respuesta ante errores.
+
+### Alcance:
+
+- **Backend**: endpoints, lógica de negocio, seguridad y base de datos.
+- **Frontend**: interfaz, navegación, formularios y visualización de datos.
+- **Integración**: comunicación frontend-backend, autenticación, manejo de errores.
+
+### Criterios de Entrada:
+
+- Código backend y frontend completo y desplegable en entorno de prueba.
+- Base de datos inicializada con datos de prueba.
+- Acceso a herramientas de testing (Postman, navegador, consola).
+
+### Criterios de Salida:
+
+- Todas las funcionalidades críticas probadas y sin fallas bloqueantes.
+- Registro de incidencias y bugs para corrección.
+
+### Recursos:
+
+- **Tester**: 1-2 personas.
+- **Software**: Postman, navegador web, consola backend, base de datos (MongoDB/MySQL).
+
+### Riesgos:
+
+- Cambios frecuentes en APIs o base de datos.
+- Dependencias externas (servicios de terceros) que fallen.
+
+---
+
+## Casos de Prueba – Sentinel PI
+
+| ID    | Área        | Funcionalidad                 | Caso de Prueba                                         | Datos de Prueba                | Resultado Esperado                                                       |
+| ----- | ----------- | ----------------------------- | ------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------ |
+| CP-01 | Backend     | CRUD Usuarios                 | Crear, leer, actualizar y eliminar usuarios vía API    | JSON de usuario válido         | Operaciones exitosas, respuestas 200/201/204 según caso                  |
+| CP-02 | Backend     | Seguridad JWT                 | Probar login y acceso a endpoints protegidos           | Usuario válido/Inválido        | JWT emitido correctamente, acceso denegado sin token                     |
+| CP-03 | Backend     | Manejo de errores             | Enviar request con datos inválidos                     | JSON incompleto o mal formado  | Respuesta 400 con mensaje de error                                       |
+| CP-04 | Frontend    | Login                         | Ingresar credenciales válidas e inválidas              | Usuario válido/Inválido        | Redirección al dashboard o mensaje de error                              |
+| CP-05 | Frontend    | Visualización de datos        | Abrir dashboard y listar servicios/usuarios            | Datos en DB de prueba          | Todos los datos se muestran correctamente y en orden                     |
+| CP-06 | Frontend    | Formulario de servicio        | Crear un nuevo servicio desde UI                       | Formulario completo            | Servicio agregado y listado correctamente                                |
+| CP-07 | Integración | Comunicación frontend-backend | Realizar CRUD completo desde UI                        | Usuario y servicio de prueba   | Acciones UI reflejan cambios reales en backend                           |
+| CP-08 | Integración | Flujo completo                | Crear usuario → login → crear servicio → cerrar sesión | Datos de prueba                | Flujo funcional sin errores, todos los endpoints funcionan correctamente |
+| CP-09 | Rendimiento | API                           | Hacer 100 requests simultáneos                         | JSON de prueba                 | Respuesta bajo 2 segundos promedio, sin errores                          |
+| CP-10 | Seguridad   | SQL/NoSQL Injection           | Intentar inyectar código en endpoints                  | Payload malicioso              | Backend maneja la inyección y devuelve error seguro                      |
+| CP-11 | Frontend    | UI responsiva                 | Abrir aplicación en escritorio, tablet y móvil         | Navegadores y tamaños variados | UI se adapta y mantiene funcionalidad                                    |
+
+---
+
+## Plan de Integración de Código y Versionamiento
+
+### Estructura de Ramas
+
+#### Ramas principales
+- **main**: Contiene el código en producción. Todo aquí debe estar probado y estable.
+- **develop**: Contiene el código en estado de integración, listo para pruebas antes de producción.
+
+#### Ramas auxiliares
+
+| Tipo de rama | Origen  | Fusión hacia   | Uso principal                                 |
+| ------------ | ------- | -------------- | --------------------------------------------- |
+| feature/*    | develop | develop        | Para nuevas funcionalidades.                  |
+| bugfix/*     | develop | develop        | Corrección de errores encontrados en pruebas. |
+| release/*    | develop | main + develop | Preparar una nueva versión para producción.   |
+| hotfix/*     | main    | main + develop | Corrección urgente de errores en producción.  |
+
+### Flujo de trabajo
+
+#### Nueva funcionalidad
+
+```bash
+git checkout develop
+git checkout -b feature/nombre-funcionalidad
+
+# trabajar y commitear
+git checkout develop
+git merge feature/nombre-funcionalidad
+git branch -d feature/nombre-funcionalidad
+```
+
+#### Nueva versión
+
+```bash
+git checkout develop
+git checkout -b release/1.0.0
+
+# ajustes finales
+git checkout main
+git merge release/1.0.0
+git tag -a v1.0.0 -m "Release 1.0.0"
+git checkout develop
+git merge release/1.0.0
+git branch -d release/1.0.0
+```
+
+#### Corrección urgente en producción
+
+```bash
+git checkout main
+git checkout -b hotfix/fix-nombre-error
+
+# aplicar fix
+git checkout main
+git merge hotfix/fix-nombre-error
+git tag -a v1.0.1 -m "Hotfix 1.0.1"
+git checkout develop
+git merge hotfix/fix-nombre-error
+git branch -d hotfix/fix-nombre-error
+```
+
+### Buenas prácticas de commits
+
+- **Commits claros y concisos**. Evitar "arreglo", "cambio", etc.
+- **Usar prefijos** para identificar el tipo de cambio:
+  - `feat:` para nuevas funcionalidades
+  - `fix:` para correcciones de bugs
+  - `docs:` para cambios en documentación
+  - `refactor:` para cambios de código que no afectan la funcionalidad
+  - `test:` para agregar o modificar pruebas
+  - `chore:` para tareas menores (build, configs, etc.)
+
+#### Ejemplos de buenos mensajes de commit
+
+```bash
+feat: agrega autenticación con JWT
+fix: corrige error al validar email duplicado
+docs: actualiza sección de instalación
+refactor: separa lógica de validación en servicio aparte
+```
+
+### Notas finales
+
+- Siempre trabajar en ramas, nunca directo en `main` o `develop`.
+- Hacer `pull` antes de empezar a trabajar.
+- Borrar ramas locales cuando ya no se usen.
+- Usar tags para marcar versiones en producción.
+
+---
+
+## Plan de Despliegue – Sentinel PI
+
+### Objetivo
+Establecer un proceso automatizado y confiable para el despliegue de Sentinel PI en diferentes entornos, garantizando la consistencia, trazabilidad y rollback en caso de fallos.
+
+### Entornos de Despliegue
+
+#### 1. Desarrollo (Development)
+- **Propósito**: Pruebas locales y desarrollo activo
+- **Rama**: `feature/*`, `develop`
+- **Infraestructura**: Docker Compose local
+- **Base de datos**: MongoDB local o contenedor
+- **Despliegue**: Manual, automático en cambios de develop
+
+#### 2. Pruebas (Testing/Staging)
+- **Propósito**: Validación de funcionalidades y pruebas de integración
+- **Rama**: `release/*`
+- **Infraestructura**: Servidor de pruebas o contenedores en cloud
+- **Base de datos**: MongoDB dedicada para testing
+- **Despliegue**: Automático al crear rama release
+
+#### 3. Producción (Production)
+- **Propósito**: Sistema en vivo para usuarios finales
+- **Rama**: `main`
+- **Infraestructura**: Cloud (Azure/AWS) o servidores dedicados
+- **Base de datos**: MongoDB en cluster con respaldo
+- **Despliegue**: Automático al hacer merge a main con aprobación manual
+
+### Estrategia de Despliegue
+
+#### Pipeline de CI/CD
+
+```yaml
+# Ejemplo de flujo con GitHub Actions
+Desarrollo → Testing → Producción
+     ↓           ↓           ↓
+   Docker    Automated   Blue-Green
+   Compose    Testing    Deployment
+```
+
+#### Fases del despliegue
+
+| Fase              | Acción                                    | Responsable            | Duración estimada |
+| ----------------- | ----------------------------------------- | ---------------------- | ----------------- |
+| 1. Build          | Compilación y creación de imágenes Docker | CI/CD Pipeline         | 5-10 min          |
+| 2. Test           | Ejecución de pruebas automatizadas        | CI/CD Pipeline         | 3-5 min           |
+| 3. Deploy Testing | Despliegue en entorno de pruebas          | CI/CD Pipeline         | 2-3 min           |
+| 4. Validation     | Validación manual de funcionalidades      | QA Team                | 15-30 min         |
+| 5. Deploy Prod    | Despliegue en producción                  | DevOps/Release Manager | 5-10 min          |
+| 6. Health Check   | Verificación de servicios en producción   | CI/CD Pipeline         | 2-3 min           |
+
+### Configuración por Entorno
+
+#### Variables de entorno requeridas
+
+```bash
+# Desarrollo
+SERVER_PORT=8080
+MONGO_URI=mongodb://localhost:27017/sentinel_dev
+JWT_SECRET=dev-secret-key
+LOG_LEVEL=DEBUG
+
+# Pruebas
+SERVER_PORT=8080
+MONGO_URI=mongodb://test-server:27017/sentinel_test
+JWT_SECRET=test-secret-key
+LOG_LEVEL=INFO
+
+# Producción
+SERVER_PORT=8080
+MONGO_URI=mongodb://prod-cluster:27017/sentinel_prod
+JWT_SECRET=${PROD_JWT_SECRET}
+LOG_LEVEL=WARN
+```
+
+### Proceso de Rollback
+
+#### Estrategia Blue-Green
+1. **Preparación**: Mantener versión anterior (Green) mientras se despliega nueva (Blue)
+2. **Switchover**: Cambiar tráfico de Green a Blue una vez validado
+3. **Rollback**: En caso de fallo, regresar tráfico a Green inmediatamente
+
+#### Comandos de rollback
+
+```bash
+# Rollback automático con Docker
+docker-compose down
+docker-compose up -d --scale backend=2
+docker tag sentinel-pi-backend:previous sentinel-pi-backend:latest
+docker-compose restart backend
+
+# Rollback de base de datos (si aplica)
+mongorestore --drop --db sentinel_prod /backup/previous-version/
+```
+
